@@ -1,0 +1,71 @@
+body{
+    background-image: url('../images/c3.jpg');
+    background-size: cover;
+    margin: 0;
+}
+
+nav{
+    padding-top:15px;
+    margin-top:0px;
+    height:70px;
+    text-align: center;
+    font-size: 40px;
+    border-bottom : solid gray 3px;
+    background-color:White;
+    color: black;
+
+}
+
+#f2{
+    width:50%;
+    float: left;
+    
+}
+#f22{
+    width:75%;
+    margin-left: 85px;
+    margin-top : 150px;
+    height: 350px;
+    text-align: center;
+    border:solid gray 2px;
+    background-color: white;
+    color: black;
+}
+#f1{
+    width:50%;
+    float: left;
+   
+}
+
+#f11{
+    width:76%;
+    margin-left: 85px;
+    margin-top : 150px;
+    height: 350px;
+    text-align: center;
+    border:solid gray 2px;
+    background-color: white;
+    color: black;
+}
+
+/* input,textarea{
+    width: 40%;
+    border: 2px solid gray;
+    padding: 5px;
+}
+button{
+    border: 2px solid gray;
+    width: 20%;
+    color: black;
+    font-size: larger;
+    padding: 10px;
+    background-color: gainsboro;
+    cursor:pointer;
+}
+label{
+    font-size: larger;
+    
+} */
+.clearfix{
+    clear:both
+}
