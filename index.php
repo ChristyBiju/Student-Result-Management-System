@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <nav>
       College of Engineering Pune
     </nav>
+
     <div id="f2">
       <div id="f22" class="1">
          <div style="font-size : 30px ;border-bottom:solid gray 3px;padding:25px">
