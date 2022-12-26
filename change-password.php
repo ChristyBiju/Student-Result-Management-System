@@ -9,13 +9,33 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 }
 else{
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $subjname = $_POST['subjname'];
-        $subjcode = $_POST['subjcode'];
-
-        $addsql = "INSERT INTO `subjects` (`subj_name`, `subj_code`) VALUES ('$subjname','$subjcode') ";
-        $result = mysqli_query($conn, $addsql);
-        if($result){
-            $showAlert = true;
+        $og_password = $_POST['ogpass'];
+        $curr_password = $_POST['npass'];
+        $concurr_password = $_POST['cnpass'];
+        $username = $_SESSION['username'];
+        // $hash_ogpass = password_hash($og_password, PASSWORD_DEFAULT);
+        $sql = "SELECT * FROM `admin` WHERE username = '$username' ";
+        $result = mysqli_query($conn, $sql);
+        $num = mysqli_num_rows($result);
+        if($num ==  1){
+            while($row = mysqli_fetch_assoc($result)){
+                if(password_verify($og_password, $row['password'])){
+                    if(($curr_password == $concurr_password)){
+                        $hash_pass = password_hash($curr_password, PASSWORD_DEFAULT);
+                        $sql1 = "UPDATE `admin` SET password = '$hash_pass' WHERE username = '$username'";
+                        $result1 = mysqli_query($conn, $sql1);
+                        if($result1){
+                            $showAlert = true;
+                        }
+                        else{
+                            $showError = true;
+                        }
+                    }
+                }
+                else{
+                    echo "Passwords do not match";
+                }
+            }
         }
         else{
             $showError = true;
@@ -39,7 +59,7 @@ else{
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){
-        echo '<script>alert("Branch Added Successfully!")</script>';
+        echo '<script>alert("Password Updated Successfully!")</script>';
     }
     if($showError){
         echo '<script>alert("Error! Try Again.")</script>';
@@ -47,35 +67,32 @@ else{
     }
     ?>
     <div style="width : 67%; margin : auto auto; height : 500px; border : 2px solid rgb(200, 200, 200); margin-top : 80px;background-color: rgb(236, 236, 236)">
-      <form method="post" >
+ <form method="post" >
 
-      <h2 style="text-align:center; font-size : 30px">Admin Change Password</h2>
-       
- 
+    <h2 style="text-align:center; font-size : 30px">Admin Change Password</h2>
+
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 <p>
-        <label for="subjname">Current Password &nbsp&nbsp&nbsp:&nbsp&nbsp  
-    <input name="subjname" style="width : 50%;padding : 5px;font-size:17px"/>
+    <label for="ogpass">Current Password &nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <input name="ogpass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
-      </p>
+    </p>
 <p style="margin-top : 50px">
-        <label for="subjcode">New Password  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp  
-    <input name="subjcode" style="width : 50%;padding : 5px;font-size:17px"/>
+    <label for="npass">New Password  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <input name="npass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
-      </p>
+    </p>
 <p style="margin-top : 50px">
-        <label for="subjcode">Confirm Password  &nbsp&nbsp&nbsp:&nbsp&nbsp  
-    <input name="subjcode" style="width : 50%;padding : 5px;font-size:17px"/>
+    <label for="cnpass">Confirm Password  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <input name="cnpass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
-      </p>
+    </p>
 
 </div>
 
- 
- 
-       
- <div style="float:right; margin-right : 80px">
-        <button type="submit" style="width : 80px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Add</button>
+
+<div style="float:right; margin-right : 80px">
+    <button type="submit" style="width : 80px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Change</button>
 
 </div>
 

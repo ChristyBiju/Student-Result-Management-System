@@ -61,7 +61,7 @@
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
-      <a href="#" style="font-size : 20px">Add result</a>
+      <a href="add-results.php" style="font-size : 20px">Add result</a>
       <a href="#" style="font-size : 20px">Manage results</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
