@@ -17,7 +17,7 @@ else{
         $branch = $_POST['branch'];
         $sem = $_POST['semester'];
 
-        $addsql = "INSERT INTO `student` (`Name`, `Roll_No`, `Email`, `Gender`, `DOB`, `Branch`, `Reg_date`, `semester`) VALUES ('$fullname','$rollno', '$email', '$gender', '$dob', '$branch', current_timestamp(), '$sem') ";
+        $addsql = "INSERT INTO `student` (`Name`, `Roll_No`, `Email`, `Gender`, `DOB`, `branch_id`, `Reg_date`, `sem_id`) VALUES ('$fullname','$rollno', '$email', '$gender', '$dob', '$branch', current_timestamp(), '$sem') ";
         $result = mysqli_query($conn, $addsql);
         if($result){
             $showAlert = true;
@@ -103,7 +103,7 @@ else{
         // echo "1";
         while($row = mysqli_fetch_assoc($result)){
         ?>
-            <option value="<?php echo $row['branch']; ?>" style="font-size:15px"><?php echo $row['branch'];?></option>
+            <option value="<?php echo $row['branch_id']; ?>" style="font-size:15px"><?php echo $row['branch'];?></option>
 
         <?php } ?>
         
@@ -124,7 +124,7 @@ else{
         // echo "1";
         while($row = mysqli_fetch_assoc($result)){
         ?>
-            <option value="<?php echo $row['semester']; ?>" style="font-size:15px"><?php echo $row['semester'];?></option>
+            <option value="<?php echo $row['sem_id']; ?>" style="font-size:15px"><?php echo $row['semester'];?></option>
 
         <?php } ?>
         

@@ -9,18 +9,36 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 }
 else{
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $marks = array();
         $branch_id = $_POST['branch'];
         $sem_id = $_POST['semester'];
-        $subj_id = $_POST['subject'];
+        $st_id = $_POST['studentid'];
+        $mark = $_POST['marks'];
 
-        $addsql = "INSERT INTO `subject_comb` (`branch_id`, `sem_id`, `subj_id`) VALUES ('$branch_id','$sem_id','$subj_id') ";
-        $result = mysqli_query($conn, $addsql);
-        if($result){
-            $showAlert = true;
+        $sql = "SELECT subjects.subj_name, subjects.subj_id FROM subject_comb join subjects on subjects.subj_id = subject_comb.subj_id WHERE subject_comb.sem_id = $sem_id order by subjects.subj_name";
+        $result = mysqli_query($conn, $sql);
+        $sid1 = array();
+
+        while($row = mysqli_fetch_assoc($result)){
+            array_push($sid1, $row['subj_id']);
         }
-        else{
-            $showError = true;
+
+        for($i = 0; $i < count($mark); $i++){
+            $mar = $mark[$i];
+            $sid = $sid1[$i];
+            $sql = "INSERT INTO results (roll_no, branch_id, sem_id, subj_id, marks) VALUES ('$st_id','$branch_id', '$sem_id', '$sid', '$mar')";
+            
+            $result = mysqli_query($conn, $sql);
+
+
+            if($result){
+                $showAlert = true;
+            }
+            else{
+                $showError = true;
+            }
         }
+        
     }
 }
 ?>
@@ -37,14 +55,14 @@ else{
     <script src="js/modernizr/modernizr.min.js"></script>
     
     <script>
-        console.log("hi");
-function getStudent(val) {
-    console.log("hi");
-
+function getStudent(val,branch_id) {
+var branch_id=$(".branch_id").val();
+var val=$(".clid").val();;
+var abh=branch_id+'$'+val;
     $.ajax({
     type: "POST",
     url: "get_student.php",
-    data:'classid='+val,
+    data:'classid='+abh,
 
     success: function(data){
         $("#studentid").html(data);   
@@ -54,7 +72,7 @@ function getStudent(val) {
 $.ajax({
         type: "POST",
         url: "get_student.php",
-        data:'classid1='+val,
+        data:'classid1='+abh,
         success: function(data){
             $("#subject").html(data);
             
@@ -64,12 +82,12 @@ $.ajax({
     </script>
 <script>
 
-function getresult(val,clid) 
+function getresult(val,clid,branch_id) 
 {   
-    
+var branch_id = $(".branch_id").val();
 var clid=$(".clid").val();
 var val=$(".stid").val();;
-var abh=clid+'$'+val;
+var abh=clid+'$'+val+'$'+branch_id;
 //alert(abh);
     $.ajax({
         type: "POST",
@@ -104,7 +122,7 @@ var abh=clid+'$'+val;
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 
 <div style="margin-left : 50px; margin-bottom:50px">
-    <label for="branch">Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :&nbsp&nbsp </label>
+    <label for="branch">Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : </label>
     <select name="branch" class="branch_id" id="branch" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px">
         <option value="" style="font-size:17px">Select Branch</option>
         <?php 
@@ -122,7 +140,7 @@ var abh=clid+'$'+val;
 </div>
 
 <div style="margin-left : 50px;margin-bottom:50px">
-<label for="semester" >Semester &nbsp&nbsp :&nbsp&nbsp   </label>
+<label for="semester" >Semester &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :  </label>
 
     <select class = "clid" name="semester" id="classid" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px" onChange="getStudent(this.value);">
         <option value="" style="font-size:17px">Select Semester</option>
@@ -167,7 +185,7 @@ var abh=clid+'$'+val;
  
        
  <div style="float:right; margin-right : 80px">
-        <button type="submit" style="width : 80px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Add</button>
+        <button type="submit" style="width : 150px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Declare Result</button>
 
 </div>
 
