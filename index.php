@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          <div style="padding-top:80px">
             <label for="click" style="font-size:25px">Search your result : </label>
             <!-- <div class="col-sm-6"> -->
-               <a href="index.php" style="border:solid ForestGreen 2px ; padding:10px ; font-size:20px ; background-color:ForestGreen; color:white;text-decoration:none">Click here</a>
+               <a href="find-result.php" style="border:solid ForestGreen 2px ; padding:10px ; font-size:20px ; background-color:ForestGreen; color:white;text-decoration:none">Click here</a>
             <!-- </div> -->
          </div>
       </div>

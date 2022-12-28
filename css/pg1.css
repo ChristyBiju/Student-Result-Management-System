@@ -1,0 +1,81 @@
+body{
+    background-color: rgb(141, 142, 143);
+}
+
+.main{
+    background-color: white;
+    width:50%;
+    height:455px; 
+    border:2px solid white;
+    margin : 100px auto;
+}
+
+.in{
+    margin : 100px;
+}
+
+.in1{
+    font-size : 25px;
+    margin-bottom: 50px;
+}
+
+.in1 select{
+    width : 75%;
+    padding: 7px;
+    font-size: 17px;
+    margin-left : 15px;
+    background-color: rgb(243, 243, 243);
+    border: 2px solid rgb(176, 175, 175);
+}
+
+.in2{
+    font-size : 25px;
+    margin-bottom: 50px;
+}
+
+.in2 select{
+    width : 75%;
+    padding: 7px;
+    font-size: 17px;
+    margin-left : 15px;
+    background-color: rgb(243, 243, 243);
+    border: 2px solid rgb(176, 175, 175);
+}
+
+.in3{
+    font-size : 25px;
+    margin-bottom: 50px;
+}
+
+.in3 input{
+    width : 70%;
+    padding: 5px;
+    font-size: 17px;
+}
+
+.in4{
+    float : right;
+
+}
+
+.in4 button{
+    width: 100px;
+    padding : 7px;
+    font-size: 20px;
+    background-color: rgb(10, 179, 29);
+    color: white;
+    border: solid rgb(9, 162, 27);
+}
+
+.e{
+    margin-top: 60px;
+}
+.e a{
+    font-size: 17px;
+    text-decoration: none;
+    color: black;   
+}
+
+.e a:hover{
+    color: blue;
+}

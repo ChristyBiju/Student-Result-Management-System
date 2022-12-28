@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(241, 241, 241);
+    margin: 0;
+
+}
+
+nav{
+    padding-top:20px;
+    margin-top:0px;
+    height:60px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom : solid gray 3px;
+    background-color:White;
+    color: black;
+
+}
+
+.m1{
+    background-color:White;
+    border: 2px solid black;
+    margin : 25px auto;
+    width: 65%;
+}
+
+.m1 p{
+    padding: 5px;
+    font-size: 20px;
+    margin-left : 25px;
+    margin-bottom: 30px;
+}
+
+table {
+    border: 2px solid black;
+    margin: auto auto;
+    border-collapse: collapse;
+    width: 95%;
+  }
+  
+ th, td {
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid black;
+  }
+  
+  tr:hover {background-color: #D6EEEE;}
