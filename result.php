@@ -10,7 +10,8 @@ include('includes/connection.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
-    <link rel="stylesheet" href="css/fp.css">
+    <!-- <link rel="stylesheet" href="css/fp.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/fp.css?version=51">
 </head>
 <body>
     <nav>
@@ -28,11 +29,7 @@ $c = 1;
 if($num > 0){
     while($row = mysqli_fetch_assoc($result))
     {
-        $sql = "SELECT t.Name, t.Roll_No, t.branch_id, t.sem_id, t.marks, subj_id, subjects.subj_name from (select sts.Name, sts.Roll_No, sts.branch_id, sts.sem_id, tr.marks,subj_id from students as sts join results as tr on tr.roll_no = sts.Roll_No) as t join subjects on subjects.subj_id = t.subj_id where (t.Roll_No = $stid and t.branch_id = $branch_id and t.sem_id = $sem_id) ";
-$result = mysqli_query($conn, $sql);
-// $num1 = mysqli_num_rows($result);
-// echo "1";
-// echo $num1;?>
+?>
     <p><b>Student Name : </b><?php echo $row['Name'];?></p>
     <p><b>Student Roll No. : </b><?php echo $row['Roll_No'];?></p>
     <p><b>Student Branch : </b><?php echo $row['branch'];?></p>
@@ -45,25 +42,68 @@ $result = mysqli_query($conn, $sql);
     <table>
         <thead>
             <tr>
-                <th>#</th>
-                <th>Subject</th>
-                <th>Marks</th>
+                <th style="width : 8%; ">#</th>
+                <th style="width : 60%; ">Subject</th>
+                <th >Marks</th>
             </tr>
         </thead>
         <tbody>
 <?php
-// $sql = "SELECT t.Name, t.Roll_No, t.branch_id, t.sem_id, t.marks, subj_id, subjects.subj_name from (select sts.Name, sts.Roll_No, sts.branch_id, sts.sem_id, tr.marks,subj_id from students as sts join results as tr on tr.roll_no = sts.Roll_No) as t join subjects on subjects.subj_id = t.subj_id where (t.Roll_No = $stid and t.branch_id = $branch_id and t.sem_id = $sem_id) ";
-// $result = mysqli_query($conn, $sql);
-// $num1 = mysqli_num_rows($result);
-// echo "1";
-// echo $num1;
+
+ $sql = "SELECT student.Name, student.Roll_No, student.branch_id, student.sem_id, results.marks, results.subj_id, subjects.subj_name from results join student on student.Roll_No = results.roll_no join subjects on subjects.subj_id = results.subj_id where student.Roll_No = $stid and student.branch_id = $branch_id and student.sem_id = $sem_id";
+ $result = mysqli_query($conn, $sql);
+$num1 = mysqli_num_rows($result);
+$cnt = 1;
+if($num1 > 0)
+{
+    while($row = mysqli_fetch_assoc($result)){
+        ?>
+        <tr>
+            <td scope="row" ><?php echo $cnt ;?></td>
+            <td ><?php echo $row['subj_name'];?></td>
+            <td ><?php echo $total = $row['marks'];?></td>
+        </tr>
+        <?php
+        $totalc += $total;
+        $cnt++;
+    }
+    ?>
+    <tr>
+        <th scope="row" colspan="2" >Total Marks : </th>
+        <td ><b><?php echo $totalc; ?></b>  out of  <b><?php echo ($outof = ($cnt - 1)*100);?></b></td>
+    </tr>
+    <tr>
+        <th scope="row" colspan="2" >Percentage : </th>
+        <td ><b><?php echo ($totalc*(100)/$outof);?>%</b></td>
+    </tr>
+    <tr>
+    <th scope="row" colspan="2" >Download Result : </th>
+        <td ><b><a href="">Download</a></b></td>
+    </tr>
+    <?php 
+} else{?>
+<div class="rnd">
+                                            <strong>Notice!</strong> Your result is not declared yet
+ <?php }
 ?>
+                                        </div>
+<?php
+}else
+{
+    ?>
+    <div class="inr">
+<strong>Oh snap!</strong>
+<?php
+echo htmlentities("Invalid Roll Id");
+}
+?>
+</div>
         </tbody>
     </table>
-<?php
-}
 
-?>
+    </div>
+    <div class="last">
+        <a href="index.php">Back to Home</a>
     </div>
 </body>
 </html>

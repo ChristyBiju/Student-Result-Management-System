@@ -18,30 +18,75 @@ nav{
 
 .m1{
     background-color:White;
-    border: 2px solid black;
+    border: 2px solid white;
     margin : 25px auto;
     width: 65%;
 }
 
 .m1 p{
     padding: 5px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left : 25px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 table {
-    border: 2px solid black;
+
+    border: 1px solid rgb(199, 197, 197);
     margin: auto auto;
     border-collapse: collapse;
     width: 95%;
+    margin-bottom: 50px;
   }
   
  th, td {
     border-collapse: collapse;
     padding: 8px;
-    text-align: center;
-    border: 2px solid black;
+    text-align: left;
+    border: 1px solid rgb(199, 197, 197);
+    border-collapse: collapse;
+  }
+  th{
+    text-align: left;
+  }
+
+  tr:hover{
+    background-color: rgb(247, 246, 246);
   }
   
-  tr:hover {background-color: #D6EEEE;}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.rnd{
+    border: 2px solid rgb(132, 132, 30);
+    margin: 30px;
+    width: 90%;
+    height: 35px;
+    font-size: 20px;
+    padding: 20px 27px;
+    color: rgb(105, 105, 23);
+    background-color: rgb(254, 254, 207);
+}
+
+.inr{
+    border: 2px solid rgb(151, 8, 8);
+    margin: 30px;
+    width: 90%;
+    height: 35px;
+    font-size: 20px;
+    padding: 20px 27px;
+    color: rgb(129, 6, 6);
+    background-color: rgb(253, 214, 214);
+
+}
+
+.last{
+    margin : 20px auto;
+    width: 60%;
+}
+
+.last a{
+    font-size: 17px;
+}
