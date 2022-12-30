@@ -11,8 +11,8 @@ else{
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $subjname = $_POST['subjname'];
         $subjcode = $_POST['subjcode'];
-
-        $addsql = "INSERT INTO `subjects` (`subj_name`, `subj_code`) VALUES ('$subjname','$subjcode') ";
+        $status = 1;
+        $addsql = "INSERT INTO `subjects` (`subj_name`, `subj_code`, `status`) VALUES ('$subjname','$subjcode','$status') ";
         $result = mysqli_query($conn, $addsql);
         if($result){
             $showAlert = true;
@@ -39,7 +39,7 @@ else{
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){
-        echo '<script>alert("Branch Added Successfully!")</script>';
+        echo '<script>alert("Subject Added Successfully!")</script>';
     }
     if($showError){
         echo '<script>alert("Error! Try Again.")</script>';
@@ -54,12 +54,12 @@ else{
  
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 <p>
-        <label for="subjname">Subject Name  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+        <label for="subjname">Subject Name  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="subjname" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
       </p>
 <p style="margin-top : 50px">
-        <label for="subjcode">Subject Code  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+        <label for="subjcode">Subject Code  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="subjcode" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
       </p>

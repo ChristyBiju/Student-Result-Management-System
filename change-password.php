@@ -73,17 +73,17 @@ else{
 
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 <p>
-    <label for="ogpass">Current Password &nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <label for="ogpass">Current Password &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="ogpass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
     </p>
 <p style="margin-top : 50px">
-    <label for="npass">New Password  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <label for="npass">New Password  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="npass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
     </p>
 <p style="margin-top : 50px">
-    <label for="cnpass">Confirm Password  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+    <label for="cnpass">Confirm Password  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="cnpass" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
     </p>

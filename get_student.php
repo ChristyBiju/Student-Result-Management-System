@@ -15,7 +15,7 @@ if(!empty($_POST["classid"]))
  }
  else{
     // $classid = intval($_POST['classid']);
-    $sql1 = "SELECT student.Name, reg_id FROM `student` WHERE sem_id = '$cid' and branch_id = '$branch_id' order by Name";
+    $sql1 = "SELECT student.Name, reg_id FROM `student` WHERE sem_id = '$cid' and branch_id = '$branch_id' and student.status = 1 order by Name";
     $result = mysqli_query($conn, $sql1);
     ?>
     <option value="">Select Name</option>

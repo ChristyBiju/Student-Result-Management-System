@@ -7,11 +7,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     header("location: index.php");
     exit;
 }
-else{
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $sem = $_POST['semester'];
+$semid = intval($_GET['semid']);
 
-        $addsql = "INSERT INTO `semester` (`semester`) VALUES ('$sem') ";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $semester = $_POST['semester'];
+        $addsql = "UPDATE `semester` set semester.semester = '$semester' where sem_id = '$semid' ";
         $result = mysqli_query($conn, $addsql);
         if($result){
             $showAlert = true;
@@ -20,7 +20,7 @@ else{
             $showError = true;
         }
     }
-}
+
 ?>
 
 
@@ -32,13 +32,13 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <!-- <link rel="stylesheet" href="css/form.css">  -->
 
-    <title>Add Semester</title>
+    <title>Update Semester</title>
 </head>
 <body style="background-color : alicewhite">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){
-        echo '<script>alert("Branch Added Successfully!")</script>';
+        echo '<script>alert("Semester Updated Successfully!")</script>';
     }
     if($showError){
         echo '<script>alert("Error! Try Again.")</script>';
@@ -48,24 +48,38 @@ else{
     <div style="width : 67%; margin : auto auto; height : 400px; border : 2px solid rgb(200, 200, 200); margin-top : 80px;background-color: rgb(236, 236, 236)">
       <form method="post" >
 
-      <h2 style="text-align:center; font-size : 30px">Add Semester</h2>
-       
- 
-<div style=" width : 75%; margin:auto auto; font-size : 20px">
+      <h2 style="text-align:center; font-size : 30px">Update Semester</h2>
+<div style=" width : 75%; margin:60px auto; font-size : 20px">
+
+<?php
+$sql = "SELECT sem_id , semester from semester where semester.sem_id = $semid";
+$result = mysqli_query($conn, $sql);
+
+$num = mysqli_num_rows($result);
+if($num > 0){
+    while($row = mysqli_fetch_assoc($result)){
+        ?>
 <p>
         <label for="semester">Semester  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
-    <input name="semester" style="width : 50%;padding : 5px;font-size:17px"/>
+    <input name="semester" value="<?php echo $row['semester']; ?>" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
       </p>
 
 
+<?php
+    }
+}
+?>
 </div>
+       
+ 
+
 
  
  
        
  <div style="float:right; margin-right : 80px">
-        <button type="submit" style="width : 80px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Add</button>
+        <button type="submit" style="width : 80px; padding : 7px;font-size : 17px; background-color : rgba(42, 42, 120, 0.909);color:white;">Update</button>
 
 </div>
 

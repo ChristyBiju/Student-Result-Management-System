@@ -53,7 +53,7 @@ else{
  
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 <p>
-        <label for="branch">Branch  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+        <label for="branch">Branch  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="branch" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
       </p>

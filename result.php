@@ -11,7 +11,7 @@ include('includes/connection.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
     <!-- <link rel="stylesheet" href="css/fp.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/fp.css?version=51">
+    <link rel="stylesheet" type="text/css" href="css/fp1.css?version=51">
 </head>
 <body>
     <nav>
@@ -50,7 +50,7 @@ if($num > 0){
         <tbody>
 <?php
 
- $sql = "SELECT student.Name, student.Roll_No, student.branch_id, student.sem_id, results.marks, results.subj_id, subjects.subj_name from results join student on student.Roll_No = results.roll_no join subjects on subjects.subj_id = results.subj_id where student.Roll_No = $stid and student.branch_id = $branch_id and student.sem_id = $sem_id";
+ $sql = "SELECT student.Name, student.Roll_No, student.branch_id, student.sem_id, results.marks, results.subj_id, subjects.subj_name from results join student on student.Roll_No = results.roll_no join subjects on subjects.subj_id = results.subj_id where student.Roll_No = $stid and student.branch_id = $branch_id and student.sem_id = $sem_id and student.status=1 and subjects.status =1";
  $result = mysqli_query($conn, $sql);
 $num1 = mysqli_num_rows($result);
 $cnt = 1;

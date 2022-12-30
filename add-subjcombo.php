@@ -56,7 +56,7 @@ else{
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 
 <div style="margin-left : 50px; margin-bottom:50px">
-    <label for="branch">Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :&nbsp&nbsp </label>
+    <label for="branch">Branch &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; </label>
     <select name="branch" id="branch" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px">
         <option value="" style="font-size:17px">Select Branch</option>
         <?php 
@@ -74,7 +74,7 @@ else{
 </div>
 
 <div style="margin-left : 50px;margin-bottom:50px">
-<label for="semester" >Semester &nbsp&nbsp :&nbsp&nbsp   </label>
+<label for="semester" >Semester &nbsp;&nbsp; :&nbsp;&nbsp;   </label>
 
     <select name="semester" id="semester" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px">
         <option value="" style="font-size:17px">Select Semester</option>
@@ -94,12 +94,13 @@ else{
     </select>
 </div>
 <div style="margin-left : 50px;margin-bottom:50px">
-<label for="subject" >Subject &nbsp&nbsp&nbsp&nbsp&nbsp :&nbsp&nbsp   </label>
+<label for="subject" >Subject &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;   </label>
 
     <select name="subject" id="subject" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px">
-        <option value="" style="font-size:17px">Select Semester</option>
+        <option value="" style="font-size:17px">Select Subject</option>
         <?php 
-        $sql = "SELECT * from `subjects`";
+        $stat = 1;
+        $sql = "SELECT * from `subjects` where subjects.status = '$stat'";
         $result = mysqli_query($conn, $sql);
 
         while($row = mysqli_fetch_assoc($result)){

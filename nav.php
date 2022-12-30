@@ -20,7 +20,7 @@
     </button>
     <div class="dropdown-content">
       <a href="add-student.php" style="font-size : 20px">Add Students</a>
-      <a href="#" style="font-size : 20px">Manage Students</a>
+      <a href="manage-students.php" style="font-size : 20px">Manage Students</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
   </div> 
@@ -30,7 +30,7 @@
     </button>
     <div class="dropdown-content">
       <a href="add-branch.php" style="font-size : 20px">Add branch</a>
-      <a href="#" style="font-size : 20px">Manage branch</a>
+      <a href="manage-branch.php" style="font-size : 20px">Manage branch</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
   </div> 
@@ -40,7 +40,7 @@
     </button>
     <div class="dropdown-content">
       <a href="add-semester.php" style="font-size : 20px">Add semester</a>
-      <a href="#" style="font-size : 20px">Manage semester</a>
+      <a href="manage-sem.php" style="font-size : 20px">Manage semester</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
   </div> 
@@ -50,9 +50,9 @@
     </button>
     <div class="dropdown-content">
       <a href="add-subjects.php" style="font-size : 20px">Add Subjects</a>
-      <a href="#" style="font-size : 20px">Manage Subjects</a>
+      <a href="manage-subjects.php" style="font-size : 20px">Manage Subjects</a>
       <a href="add-subjcombo.php" style="font-size : 20px">Add Subject Combination</a>
-      <a href="#" style="font-size : 20px">Manage Subject Combination</a>
+      <a href="manage-subjcomb.php" style="font-size : 20px">Manage Subject Combination</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
   </div> 
@@ -62,7 +62,7 @@
     </button>
     <div class="dropdown-content">
       <a href="add-results.php" style="font-size : 20px">Add result</a>
-      <a href="#" style="font-size : 20px">Manage results</a>
+      <a href="manage-results.php" style="font-size : 20px">Manage results</a>
       <!-- <a href="#">Link 3</a> -->
     </div>
   </div> 

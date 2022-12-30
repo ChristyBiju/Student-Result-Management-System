@@ -122,7 +122,7 @@ var abh=clid+'$'+val+'$'+branch_id;
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 
 <div style="margin-left : 50px; margin-bottom:50px">
-    <label for="branch">Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : </label>
+    <label for="branch">Branch &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label>
     <select name="branch" class="branch_id" id="branch" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px">
         <option value="" style="font-size:17px">Select Branch</option>
         <?php 
@@ -140,7 +140,7 @@ var abh=clid+'$'+val+'$'+branch_id;
 </div>
 
 <div style="margin-left : 50px;margin-bottom:50px">
-<label for="semester" >Semester &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :  </label>
+<label for="semester" >Semester &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  </label>
 
     <select class = "clid" name="semester" id="classid" style = "padding : 5px; background-color : alicewhite; width:80%; font-size:17px" onChange="getStudent(this.value);">
         <option value="" style="font-size:17px">Select Semester</option>
@@ -193,13 +193,13 @@ var abh=clid+'$'+val+'$'+branch_id;
 
     </div>
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/pace/pace.min.js"></script>
-        <script src="js/lobipanel/lobipanel.min.js"></script>
-        <script src="js/iscroll/iscroll.js"></script>
-        <script src="js/prism/prism.js"></script>
-        <script src="js/select2/select2.min.js"></script>
-        <script src="js/main.js"></script>
+        <!-- <script src="js/bootstrap/bootstrap.min.js"></script> -->
+        <!-- <script src="js/pace/pace.min.js"></script> -->
+        <!-- <script src="js/lobipanel/lobipanel.min.js"></script> -->
+        <!-- <script src="js/iscroll/iscroll.js"></script> -->
+        <!-- <script src="js/prism/prism.js"></script> -->
+        <!-- <script src="js/select2/select2.min.js"></script> -->
+        <!-- <script src="js/main.js"></script> -->
         <script>
             $(function($) {
                 $(".js-states").select2();

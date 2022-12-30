@@ -16,8 +16,8 @@ else{
         $dob = $_POST['birthDate'];
         $branch = $_POST['branch'];
         $sem = $_POST['semester'];
-
-        $addsql = "INSERT INTO `student` (`Name`, `Roll_No`, `Email`, `Gender`, `DOB`, `branch_id`, `Reg_date`, `sem_id`) VALUES ('$fullname','$rollno', '$email', '$gender', '$dob', '$branch', current_timestamp(), '$sem') ";
+        $status = 1;
+        $addsql = "INSERT INTO `student` (`Name`, `Roll_No`, `Email`, `Gender`, `DOB`, `branch_id`, `Reg_date`, `sem_id`, `status`) VALUES ('$fullname','$rollno', '$email', '$gender', '$dob', '$branch', current_timestamp(), '$sem', '$status') ";
         $result = mysqli_query($conn, $addsql);
         if($result){
             $showAlert = true;
@@ -59,24 +59,24 @@ else{
  
 <div style=" width : 75%; margin:auto auto; font-size : 20px">
 <p>
-        <label for="fullname">Full name  &nbsp&nbsp&nbsp:&nbsp&nbsp  
+        <label for="fullname">Full name  &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;  
     <input name="fullname" style="width : 50%;padding : 5px;font-size:17px"/>
 </label>
       </p>
 <p style="margin-top : 50px">
-        <label for="rollno">Roll No &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp 
+        <label for="rollno">Roll No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp; 
      <input name="rollno" style="width : 50%;padding : 5px;font-size:17px"/>
     </label>
       </p>
  <p>
-        <label for="email">Email &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :  &nbsp&nbsp
+        <label for="email">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :  &nbsp;&nbsp;
     <input type="email" name="email" style="width : 50%;padding : 5px;font-size:17px" />
 </label>
       </p>
        
  
 <p>
-        Gender  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: &nbsp&nbsp
+        Gender  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
         <label><input type="radio" name="gender" value="Male" /> Male</label>
         <label><input type="radio" name="gender" value="Female" /> Female</label>
         <label><input type="radio" name="gender" value="Other" /> Other</label>
@@ -88,13 +88,13 @@ else{
        
  
 <p>
-        <label for="birthDate">DOB &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :&nbsp&nbsp 
-     <input type="date" name="birthDate" style="padding : 5px;font-size:17px"/></label>
+        <label for="birthDate">DOB &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; 
+     <input type="date" name="birthDate" style="padding : 5px;font-size:17px; width : 180px"/></label>
       </p>
  
 <div style="margin-left : 50px; margin-bottom:50px">
-    <label for="branch">Branch &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp :&nbsp&nbsp </label>
-    <select name="branch" id="branch" style = "padding : 5px; background-color : alicewhite; width:140px; font-size:15px">
+    <label for="branch">Branch &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp; </label>
+    <select name="branch" id="branch" style = "padding : 5px; background-color : alicewhite; width:200px; font-size:17px">
         <option value="" style="font-size:15px">Select Branch</option>
         <?php 
         $sql = "SELECT * from `branch`";
@@ -103,7 +103,7 @@ else{
         // echo "1";
         while($row = mysqli_fetch_assoc($result)){
         ?>
-            <option value="<?php echo $row['branch_id']; ?>" style="font-size:15px"><?php echo $row['branch'];?></option>
+            <option value="<?php echo $row['branch_id']; ?>" style="font-size:17px"><?php echo $row['branch'];?></option>
 
         <?php } ?>
         
@@ -113,18 +113,16 @@ else{
 </div>
 
 <div style="margin-left : 50px">
-<label for="semester" >Semester &nbsp&nbsp :&nbsp&nbsp   </label>
+<label for="semester" >Semester &nbsp;&nbsp; :&nbsp;&nbsp;   </label>
 
-    <select name="semester" id="semester" style = "padding : 5px; background-color : alicewhite; width:140px; font-size:15px">
+    <select name="semester" id="semester" style = "padding : 5px; background-color : alicewhite; width:200px; font-size:17px">
         <option value="" style="font-size:15px">Select Semester</option>
         <?php 
         $sql = "SELECT * from `semester`";
         $result = mysqli_query($conn, $sql);
-        // $sno = 0;
-        // echo "1";
         while($row = mysqli_fetch_assoc($result)){
         ?>
-            <option value="<?php echo $row['sem_id']; ?>" style="font-size:15px"><?php echo $row['semester'];?></option>
+            <option value="<?php echo $row['sem_id']; ?>" style="font-size:17px"><?php echo $row['semester'];?></option>
 
         <?php } ?>
         
