@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    background-color: rgb(216, 213, 213);
+}
+
+h1{
+    font-size: 50px;
+    margin: 50px;
+    text-align: center;
+}
+
+.m1, .m2, .m3{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 33%;
+    float: left;
+}
+
+
+.m11, .m22,.m33{
+    box-sizing: border-box;
+    text-align: right;
+    padding: 20px;
+    font-size: 23px;
+    width: 65%;
+    margin :auto auto;
+    color: white;
+}
+
+.m11{
+    background:linear-gradient(to right,rgb(89, 8, 91),rgb(195, 45, 197));
+
+}
+
+
+.m5,.m4{
+    margin-top: 80px;
+    width: 50%;
+    float: left;
+}
+
+.m44, .m55{
+    box-sizing: border-box;
+    text-align: right;
+    padding: 20px;
+    font-size: 20px;
+    width: 45%;
+    margin :auto auto;
+    border: 2px solid red;
+    height: 130px;
+}

@@ -40,7 +40,7 @@ else{
 
     <title>Add Students</title>
 </head>
-<body style="background-color : alicewhite">
+<body style="background-color : alicewhite; margin : 0">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){

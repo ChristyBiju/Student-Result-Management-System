@@ -12,8 +12,9 @@ else{
         $branch_id = $_POST['branch'];
         $sem_id = $_POST['semester'];
         $subj_id = $_POST['subject'];
-
-        $addsql = "INSERT INTO `subject_comb` (`branch_id`, `sem_id`, `subj_id`) VALUES ('$branch_id','$sem_id','$subj_id') ";
+        $stat = 1 ;
+        $addsql = "INSERT INTO `subject_comb` (`branch_id`, `sem_id`, `subj_id`,`status`) VALUES ('$branch_id','$sem_id','$subj_id', '$stat') ";
+        
         $result = mysqli_query($conn, $addsql);
         if($result){
             $showAlert = true;
@@ -36,7 +37,7 @@ else{
 
     <title>Add Subject Combination</title>
 </head>
-<body style="background-color : alicewhite">
+<body style="background-color : alicewhite; margin : 0">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){

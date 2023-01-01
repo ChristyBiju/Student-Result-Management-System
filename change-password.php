@@ -55,7 +55,7 @@ else{
 
     <title>Admin Change Password</title>
 </head>
-<body style="background-color : alicewhite">
+<body style="background-color : alicewhite; margin : 0">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){

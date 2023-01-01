@@ -17,7 +17,7 @@ include('includes/connection.php');
     <nav>
     Result Management System
     </nav>
-    <div class="m1">
+    <div class="m1" id="d1">
 <?php
 $stid = $_POST['stid'];
 $branch_id = $_POST['branch_id'];
@@ -78,7 +78,7 @@ if($num1 > 0)
     </tr>
     <tr>
     <th scope="row" colspan="2" >Download Result : </th>
-        <td ><b><a href="">Download</a></b></td>
+        <td ><button style="background-color:white; font-size:18px" onclick="printDiv('d1','Title')">Download</button></td>
     </tr>
     <?php 
 } else{?>
@@ -105,5 +105,28 @@ echo htmlentities("Invalid Roll Id");
     <div class="last">
         <a href="index.php">Back to Home</a>
     </div>
+    <script>
+        var doc = new jsPDF();
+
+
+function printDiv(divId,
+ title) {
+
+ let mywindow = window.open('', 'PRINT', 'height=650,width=900,top=100,left=150');
+
+ mywindow.document.write(`<html><head><title>${title}</title>`);
+ mywindow.document.write('</head><body >');
+ mywindow.document.write(document.getElementById(divId).innerHTML);
+ mywindow.document.write('</body></html>');
+
+ mywindow.document.close(); // necessary for IE >= 10
+ mywindow.focus(); // necessary for IE >= 10*/
+
+ mywindow.print();
+ mywindow.close();
+
+ return true;
+}
+    </script>
 </body>
 </html>

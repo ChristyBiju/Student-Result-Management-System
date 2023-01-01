@@ -102,7 +102,7 @@ var abh=clid+'$'+val+'$'+branch_id;
 </script>
 
 </head>
-<body style="background-color : alicewhite">
+<body style="background-color : alicewhite; margin : 0">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){
@@ -113,7 +113,7 @@ var abh=clid+'$'+val+'$'+branch_id;
 
     }
     ?>
-    <div style="width : 70%; margin : auto auto; height : 900px; border : 2px solid rgb(200, 200, 200); margin-top : 20px;background-color: rgb(236, 236, 236)">
+    <div style="width : 70%; margin : auto auto; height : 1400px; border : 2px solid rgb(200, 200, 200); margin-top : 20px;background-color: rgb(236, 236, 236)">
       <form method="post" >
 <!--     <fieldset> -->
       <h2 style="text-align:center; font-size : 30px">Declare Result</h2>

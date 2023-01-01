@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Student's Info</title>
 </head>
-<body>
+<body style=" margin : 0">
     <?php include "nav.php";?>
     <?php
     if($showAlert){
@@ -140,7 +140,7 @@ if($gndr == "Other"){
     </select>
 </div>
 <p>
-        Reg Date &nbsp;;&nbsp;;&nbsp;;&nbsp;;:&nbsp;;&nbsp;;&nbsp;; <?php echo $row['Reg_date'];?>
+        Reg Date &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; <?php echo $row['Reg_date'];?>
       </p>     
 
 <!-- </div> -->

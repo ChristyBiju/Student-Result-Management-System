@@ -34,11 +34,11 @@ else{
 
     <title>Add Semester</title>
 </head>
-<body style="background-color : alicewhite">
+<body style="background-color : alicewhite; margin : 0">
 <?php include "nav.php"; ?>
 <?php
     if($showAlert){
-        echo '<script>alert("Branch Added Successfully!")</script>';
+        echo '<script>alert("Semester Added Successfully!")</script>';
     }
     if($showError){
         echo '<script>alert("Error! Try Again.")</script>';
