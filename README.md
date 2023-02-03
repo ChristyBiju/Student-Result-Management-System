@@ -4,7 +4,7 @@ This project would provide students to view their examination results in a simpl
 ## Tech Stack Used : 
 * Front end : HTML, CSS
 * Back end : PHP, MySQL
-* Server : XAMPP Server
+* Server : Apache Server
 
 ## Steps to run the code : 
 * Download the code and extract all the files from zip file.
