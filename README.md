@@ -34,4 +34,4 @@ This project would provide students to view their examination results in a simpl
 ![result](https://user-images.githubusercontent.com/89544124/210182445-1e1b5291-55a2-4259-9fad-df46edef7736.png)
 
 ## Author : 
-* Christy Biju
+* Christy Biju (https://github.com/ChristyBiju)
