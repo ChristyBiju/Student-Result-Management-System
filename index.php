@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
     <nav>
-      College of Engineering Pune
+      College of Engineering Bangalore
     </nav>
 
     <div id="f2">
